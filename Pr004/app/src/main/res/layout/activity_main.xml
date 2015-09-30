@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cuatroEst"
+        android:id="@+id/tvCuatroEst"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"/>
+
+    <ImageView
+        android:layout_width="450dp"
+        android:layout_height="150dp"
+        android:id="@+id/imageView"
+        android:layout_above="@+id/tvEstaciones"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvCuatroEst"
+        android:contentDescription="@string/img4est"
+        android:src="@drawable/estaciones"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/estaciones"
+        android:id="@+id/tvEstaciones"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/megusta"
+        android:id="@+id/btnMeGusta"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvEstaciones"
+        android:layout_above="@+id/btnMeGusta"
+        android:layout_alignLeft="@+id/btnMeGusta"
+        android:layout_alignStart="@+id/btnMeGusta"
+        android:id="@+id/rdGroup"
+        android:layout_alignRight="@+id/tvCuatroEst"
+        android:layout_alignEnd="@+id/tvCuatroEst">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/primavera"
+            android:id="@+id/rdPrimavera" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/verano"
+            android:id="@+id/rdVerano" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/otoño"
+            android:id="@+id/rdOtoño" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/invierno"
+            android:id="@+id/rdInvierno" />
+    </RadioGroup>
+
+</RelativeLayout>

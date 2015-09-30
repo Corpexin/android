@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">léte fr</string>
+
+    <string name="action_settings">configureé</string>
+    <string name="nombre">Noun</string>
+    <string name="apellido">Apeelle</string>
+    <string name="NombreApellidos">Noun/Apeelle</string>
+    <string name="ApellidosNombre">Apeelle/Noun</string>
+    <string name="result">resultee</string>
+</resources>

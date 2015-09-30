@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Pr002n</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellidos</string>
+    <string name="NombreApellidos">Nombre/Apellido</string>
+    <string name="ApellidosNombre">Apellidos/Nombre</string>
+    <string name="result">resultado</string>
+</resources>

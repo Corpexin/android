@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pr003</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="educado">Educado</string>
+    <string name="saludar">Saludar</string>
+    <string name="nombre">Nombre</string>
+</resources>
