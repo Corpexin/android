@@ -18,30 +18,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/usuario"
-        android:id="@+id/textView2"
+        android:id="@+id/tvUsuario"
         android:paddingTop="10dp"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:visibility="invisible"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/etUsuario"
-        android:inputType="text"/>
+        android:inputType="text"
+        android:hint="@string/hUsuario"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contraseña"
-        android:id="@+id/textView3"
+        android:id="@+id/tvContraseña"
         android:textSize="20sp"
-        android:paddingTop="10dp" />
+        android:paddingTop="10dp"
+        android:visibility="invisible"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/etContraseña" />
+        android:id="@+id/etContraseña"
+        android:hint="@string/hContraseña"/>
 
     <LinearLayout
         android:layout_width="match_parent"
