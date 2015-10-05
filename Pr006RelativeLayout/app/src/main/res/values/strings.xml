@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Pr006RelativeLayout</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="hContraseña">Contraseña</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="hUsuario">Usuario</string>
+    <string name="usuario">Usuario</string>
+    <string name="conexion">Conexion</string>
+</resources>

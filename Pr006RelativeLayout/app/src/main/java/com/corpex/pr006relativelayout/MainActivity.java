@@ -1,4 +1,4 @@
-package com.deviantart.corpex.pr005;
+package com.corpex.pr006relativelayout;
 
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -114,19 +114,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-       switch(v.getId()){
-           case R.id.btnAceptar:
-               Toast.makeText(MainActivity.this, "Estableciendo conexion con usuario "+etUsuario.getText(), Toast.LENGTH_LONG).show();
-               break;
-           case R.id.btnCancelar:
-               //tvUsuario.setText("");
-               //tvContraseña.setText("");
-               etUsuario.setText("");
-               etContraseña.setText("");
-              // etUsuario.setHint("Usuario");
-             //  etContraseña.setHint("Contraseña");
-               break;
-       }
+        switch(v.getId()){
+            case R.id.btnAceptar:
+                Toast.makeText(MainActivity.this, "Estableciendo conexion con usuario "+etUsuario.getText(), Toast.LENGTH_LONG).show();
+                break;
+            case R.id.btnCancelar:
+                //tvUsuario.setText("");
+                //tvContraseña.setText("");
+                etUsuario.setText("");
+                etContraseña.setText("");
+                // etUsuario.setHint("Usuario");
+                //  etContraseña.setHint("Contraseña");
+                break;
+        }
 
     }
 
