@@ -2,4 +2,5 @@
     <string name="app_name">Pr007ScrollView</string>
     <string name="panel">PANEL DE MENSAJES</string>
     <string name="enviar">Enviar Mensaje</string>
+    <string name="imagen">imagen</string>
 </resources>

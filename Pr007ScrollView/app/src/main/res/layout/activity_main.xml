@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:layout_height="match_parent"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/panel"
+        style="?android:attr/listSeparatorTextViewStyle"
         android:id="@+id/tvPaneldM"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="false"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sv"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/tvPaneldM" >
+        android:layout_below="@+id/tvPaneldM"
+        android:layout_above="@+id/linearLayout"
+        android:paddingLeft="@dimen/margen"
+        android:paddingRight="@dimen/margen">
 
         <TextView
             android:layout_width="wrap_content"
@@ -33,23 +38,26 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="false"
         android:layout_alignParentEnd="true"
-        android:background="#ceeeff"
         android:layout_alignParentBottom="true"
-        android:id="@+id/linearLayout">
+        android:id="@+id/linearLayout"
+        android:background="#c4d6e3">
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/etMensaje"
             android:layout_weight="1"
-            android:hint="@string/enviar" />
+            android:hint="@string/enviar"
+            android:theme="@style/Base.Widget.AppCompat.EditText" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/ivEnviar"
             android:layout_weight="1"
-            android:src="@android:drawable/ic_menu_send" />
+            android:src="@android:drawable/ic_menu_send"
+            android:contentDescription="@string/imagen"
+            android:layout_gravity="center_vertical" />
     </LinearLayout>
 
 </RelativeLayout>
