@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cvSuperior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="8dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardPreventCornerOverlap="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/euro"
+                android:id="@+id/euros"
+                android:textSize="24sp"
+                android:layout_alignWithParentIfMissing="true"
+                android:textIsSelectable="true"
+                android:paddingBottom="10dp"
+                android:layout_above="@+id/tvProp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:id="@+id/etCuenta"
+                android:singleLine="false"
+                android:textSize="24sp"
+                android:layout_below="@+id/tvCuenta"
+                android:layout_toLeftOf="@+id/euros"
+                android:layout_toStartOf="@+id/euros"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:gravity="end"
+                android:text="@string/cero"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cuenta"
+                android:id="@+id/tvCuenta"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignRight="@+id/etCuenta"
+                android:layout_alignEnd="@+id/etCuenta" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/prop"
+                android:id="@+id/tvProp"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_below="@+id/etCuenta"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/propina"
+                android:id="@+id/tvPropina"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_alignTop="@+id/tvProp"
+                android:layout_alignRight="@+id/etCuenta"
+                android:layout_alignEnd="@+id/etCuenta" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/euro"
+                android:id="@+id/euros2"
+                android:textSize="24sp"
+                android:layout_alignWithParentIfMissing="true"
+                android:textIsSelectable="true"
+                android:paddingBottom="10dp"
+                android:layout_alignTop="@+id/euros3"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/porc"
+                android:id="@+id/euros3"
+                android:textSize="24sp"
+                android:layout_alignWithParentIfMissing="true"
+                android:textIsSelectable="true"
+                android:paddingBottom="10dp"
+                android:layout_alignBottom="@+id/etProp"
+                android:layout_toRightOf="@+id/tvProp"
+                android:layout_toEndOf="@+id/tvProp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:id="@+id/etProp"
+                android:singleLine="false"
+                android:textSize="24sp"
+                android:gravity="end"
+                android:layout_below="@+id/tvProp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/euros3"
+                android:layout_toStartOf="@+id/euros3"
+                android:text="@string/dos" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:id="@+id/etPropina"
+                android:singleLine="false"
+                android:textSize="24sp"
+                android:gravity="end"
+                android:layout_alignBottom="@+id/euros2"
+                android:layout_toRightOf="@+id/euros3"
+                android:layout_toEndOf="@+id/euros3"
+                android:layout_alignRight="@+id/tvPropina"
+                android:layout_alignEnd="@+id/tvPropina"
+                android:layout_below="@+id/tvPropina"
+                android:text="@string/cero" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/total"
+                android:id="@+id/tvTotal"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_below="@+id/etPropina"
+                android:layout_alignRight="@+id/etPropina"
+                android:layout_alignEnd="@+id/etPropina" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:id="@+id/etTotal"
+                android:singleLine="false"
+                android:textSize="24sp"
+                android:gravity="end"
+                android:layout_below="@+id/tvTotal"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignRight="@+id/etPropina"
+                android:layout_alignEnd="@+id/etPropina"
+                android:text="@string/cero" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/euro"
+                android:id="@+id/euros4"
+                android:textSize="24sp"
+                android:layout_alignWithParentIfMissing="true"
+                android:textIsSelectable="true"
+                android:paddingBottom="10dp"
+                android:layout_alignBottom="@+id/etTotal"
+                android:layout_toRightOf="@+id/etTotal"
+                android:layout_toEndOf="@+id/etTotal" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/limpiar"
+                android:id="@+id/btnLimpiar1"
+                android:layout_below="@+id/etTotal"
+                android:layout_centerHorizontal="true" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/redondeat"
+                android:id="@+id/btnRedondear1"
+                android:layout_below="@+id/etTotal"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cvInferior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="8dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardPreventCornerOverlap="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/comen"
+                android:id="@+id/tvComensales"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/editText6"
+                android:layout_toStartOf="@+id/editText6"
+                android:layout_marginRight="62dp"
+                android:layout_marginEnd="62dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/xcom"
+                android:id="@+id/tvPorComensal"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_alignTop="@+id/tvComensales"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:id="@+id/etComensales"
+                android:singleLine="false"
+                android:textSize="24sp"
+                android:gravity="end"
+                android:layout_below="@+id/tvComensales"
+                android:layout_alignRight="@+id/tvComensales"
+                android:layout_alignEnd="@+id/tvComensales"
+                android:text="@string/cinco" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/limpiar2"
+                android:id="@+id/btnLimpiar2"
+                android:layout_below="@+id/etComensales"
+                android:layout_centerHorizontal="true" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/redond2"
+                android:id="@+id/btnRedondear2"
+                android:layout_below="@+id/euros5"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/euro"
+                android:id="@+id/euros5"
+                android:textSize="24sp"
+                android:layout_alignWithParentIfMissing="true"
+                android:textIsSelectable="true"
+                android:paddingBottom="10dp"
+                android:layout_alignBottom="@+id/editText6"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:id="@+id/editText6"
+                android:singleLine="false"
+                android:textSize="24sp"
+                android:gravity="end"
+                android:layout_below="@+id/tvComensales"
+                android:layout_toLeftOf="@+id/euros5"
+                android:layout_toStartOf="@+id/euros5"
+                android:layout_alignLeft="@+id/btnRedondear2"
+                android:layout_alignStart="@+id/btnRedondear2"
+                android:text="@string/cero" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
+

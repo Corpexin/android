@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/c1"
+        app:layout_widthPercent="@fraction/top_left_width"
+        app:layout_heightPercent="@fraction/views_height"
+        app:layout_marginRightPercent="@fraction/views_margin"
+        app:layout_marginTopPercent="@fraction/views_margin"
+        app:layout_marginBottomPercent="@fraction/views_margin"
+        app:layout_marginStartPercent="@fraction/views_margin"/>
+
+    <TextView
+        app:layout_marginTopPercent="@fraction/views_margin"
+        app:layout_marginEndPercent="@fraction/views_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:background="@color/c2"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView"
+        app:layout_heightPercent="@fraction/views_height"/>
+
+    <TextView
+        app:layout_widthPercent="@fraction/middle_width"
+        app:layout_heightPercent="@fraction/views_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:background="@color/c3"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        app:layout_marginBottomPercent="@fraction/views_margin"
+        app:layout_marginStartPercent="@fraction/views_margin"
+        app:layout_marginRightPercent="@fraction/views_margin"/>
+
+    <TextView
+        app:layout_marginEndPercent="@fraction/views_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/textView4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3"
+        android:layout_below="@+id/textView"
+        android:background="@color/c4"
+        app:layout_widthPercent="@fraction/top_left_width"
+        app:layout_heightPercent="@fraction/views_height" />
+
+    <TextView
+        app:layout_widthPercent="@fraction/bottom_left_width"
+        app:layout_heightPercent="@fraction/views_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:background="@color/c5"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        app:layout_marginBottomPercent="@fraction/views_margin"
+        app:layout_marginStartPercent="@fraction/views_margin"
+        app:layout_marginRightPercent="@fraction/views_margin"/>
+
+    <TextView
+        app:layout_marginTopPercent="@fraction/views_margin"
+        app:layout_marginEndPercent="@fraction/views_margin"
+        app:layout_marginBottomPercent="@fraction/views_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/textView6"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/textView5"
+        android:layout_toEndOf="@+id/textView5"
+        android:layout_below="@+id/textView4"
+        android:background="@color/c6"
+        app:layout_widthPercent="@fraction/top_left_width"
+        app:layout_heightPercent="@fraction/views_height"
+        />
+
+</android.support.percent.PercentRelativeLayout>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Pr008CardView</string>
+    <string name="euro">€</string>
+    <string name="cuenta">Cuenta</string>
+    <string name="prop">% Prop</string>
+    <string name="propina">Propina</string>
+    <string name="total">Total</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="redondeat">Redondear</string>
+    <string name="comen">Comensales</string>
+    <string name="xcom">Por Comensal</string>
+    <string name="limpiar2">Limpiar</string>
+    <string name="redond2">Redondear</string>
+    <string name="cero">0.00</string>
+    <string name="dos">2</string>
+    <string name="cinco">5</string>
+    <string name="porc">%</string>
+</resources>
