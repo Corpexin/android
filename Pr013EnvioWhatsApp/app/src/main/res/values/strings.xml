@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Pr013EnvioWhatsApp</string>
+    <string name="envio">Enviar WA</string>
+    <string name="mostrar">Mostrar en Otra</string>
+</resources>
