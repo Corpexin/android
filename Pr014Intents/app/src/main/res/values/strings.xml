@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pr014Intents</string>
+    <string name="dni">DNI</string>
+    <string name="nombre">Nombre</string>
+    <string name="nodisp">No disponible</string>
+    <string name="edad">Edad</string>
+    <string name="enviar">Enviar</string>
+    <string name="recibir">Recibir</string>
+</resources>
