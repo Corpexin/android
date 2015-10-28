@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Pr015Parcelable</string>
+    <string name="nombre">Nombre:</string>
+    <string name="nodisp">No Disponible</string>
+    <string name="edad">Edad:</string>
+    <string name="enviar">Enviar</string>
+    <string name="dni">DNI</string>
+    <string name="recibir">Recibir</string>
+    <string name="sexo">Sexo</string>
+</resources>

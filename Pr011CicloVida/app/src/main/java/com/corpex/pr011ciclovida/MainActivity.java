@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private static final String STATE_CONTADOR = "estado";
-    int mContador=0;
+    int mContador =0;
     TextView tvTexto;
     Button btnBoton;
 
@@ -25,14 +25,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void initViews() {
         tvTexto = (TextView) findViewById(R.id.tvTexto);
-        btnBoton = (Button) findViewById(R.id.btbnBoton);
-        tvTexto.setText(mContador);
+        btnBoton = (Button) findViewById(R.id.btnBoton);
+        tvTexto.setText(String.valueOf(mContador));
 
         btnBoton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvTexto.setText(String.valueOf(mContador));
                 mContador++;
+                tvTexto.setText(String.valueOf(mContador));
+
             }
         });
     }

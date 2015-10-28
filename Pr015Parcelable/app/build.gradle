@@ -5,7 +5,7 @@ android {
     buildToolsVersion "22.0.1"
 
     defaultConfig {
-        applicationId "com.corpex.pr014intents"
+        applicationId "com.corpex.pr015parcelable"
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
