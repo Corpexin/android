@@ -1,6 +1,7 @@
 package com.corpex.pr016arrayadapterpers;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,5 +60,8 @@ public class AlumnoAdapter extends ArrayAdapter<Alumno> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.nombre.setText(datos.get(position).getNombre());
         holder.edad.setText(datos.get(position).getEdad());
+        //Si es menor de edad le cambio el color a rojo
+        if(Integer.parseInt(datos.get(position).getEdad())<18)
+            holder.edad.setTextColor(Color.RED);
     }
 }

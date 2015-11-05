@@ -87,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
         outState.putString(STATE_NOMBRE, ""+tvResultNombre.getText());
         outState.putString(STATE_EDAD, ""+tvResultEdad.getText());
     }
+
+
 }
 
 

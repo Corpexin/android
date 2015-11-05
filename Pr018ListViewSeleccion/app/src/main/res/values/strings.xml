@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Pr018ListViewSeleccion</string>
+    <string name="colorcab">De que color es el caballo blanco de santiago?</string>
+    <string name="num5">5</string>
+    <string name="num50">+50</string>
+    <string name="comprobar">Comprobar</string>
+    <string name="holi">Holi</string>
+</resources>
