@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/mnuAprobar"
-        android:title="@string/aprobar"/>
+        android:title="@string/aprobar"
+        android:icon="@drawable/ic_action_name"
+        app:showAsAction="ifRoom|withText"/> /<!--item de accion para que aparezca en la action bar.-->
+
     <item
         android:id="@+id/mnuSuspender"
-        android:title="@string/suspender"/>
+        android:title="@string/suspender"
+        android:icon="@drawable/ic_action_name"
+        app:showAsAction = "ifRoom|withText"/>
+
 </menu>

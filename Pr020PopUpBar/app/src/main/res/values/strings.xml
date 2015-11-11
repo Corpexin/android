@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Pr020PopUpBar</string>
+    <string name="listado_de_alumnos">Listado de Alumnos</string>
+    <string name="llamar">Llamar</string>
+    <string name="enviar_mensaje">Enviar Mensaje</string>
+</resources>
