@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PrRepParcelable</string>
+    <string name="nombre">Name</string>
+    <string name="edad">Age</string>
+    <string name="enviar">Enviar</string>
+    <string name="nombr">NOMBRE</string>
+    <string name="ed">EDAD</string>
+    <string name="no">Name</string>
+</resources>
