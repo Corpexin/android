@@ -49,8 +49,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         else{
             startActivity(intent);
         }
-
-
     }
 
     private ArrayList<Alumno> getDatos() {

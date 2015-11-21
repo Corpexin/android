@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/card_padding"
+        android:paddingBottom="@dimen/card_padding">
+
+        <ImageView
+            android:id="@+id/ivPerfil"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="false"
+            android:contentDescription="@string/image"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/lblNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Baldomero Llégate Ligero"
+            style="@style/Base.TextAppearance.AppCompat.Subhead"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/ivPerfil"
+            android:layout_toEndOf="@+id/ivPerfil"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"/>
+
+
+        <TextView
+            android:id="@+id/lblEdad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="22 años"
+            style="@style/Base.TextAppearance.AppCompat.Body2"
+            android:layout_below="@+id/lblNombre"
+            android:layout_toRightOf="@+id/ivPerfil"
+            android:layout_toEndOf="@+id/ivPerfil"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"/>
+
+        <TextView
+            android:id="@+id/lblCiudad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Algeciras"
+            android:layout_below="@+id/lblEdad"
+            android:layout_toRightOf="@+id/ivPerfil"
+            android:layout_toEndOf="@+id/ivPerfil"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"/>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

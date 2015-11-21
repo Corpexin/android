@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Pr016ArrayAdapterPers</string>
+    <string name="listado_de_alumnos">Listado</string>
+    <string name="has_aprobado">Has Aprobado</string>
+    <string name="asignaturas_eliminadas">Asignaturas Eliminadas</string>
+    <string name="alumnos_eliminados">Alumnos Eliminados</string>
+</resources>

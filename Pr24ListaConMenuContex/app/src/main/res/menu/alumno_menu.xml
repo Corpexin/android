@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="Aprobar"
+        android:id="@+id/mnuAprobar"
+        android:icon="@drawable/aceptar"
+        app:showAsAction="ifRoom|withText"/>
+    <item android:title="Eliminar"
+        android:id="@+id/mnuEliminar"
+        android:icon="@drawable/cancelar"
+        app:showAsAction="ifRoom|withText"/>
+</menu>

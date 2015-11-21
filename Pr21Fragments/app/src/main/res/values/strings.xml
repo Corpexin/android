@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Pr21Fragments</string>
     <string name="vacio">Vacio</string>
+    <string name="call">llamar</string>
 </resources>

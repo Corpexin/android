@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PrRepIntentExplicitos</string>
+    <string name="datos">Datos de Alumno</string>
+    <string name="listado">(Listado no disponible)</string>
+    <string name="solicitar">Solicitar</string>
+    <string name="datos2">Datos de Alumno</string>
+    <string name="nombre">Nombre</string>
+    <string name="edad">Edad</string>
+    <string name="enviar">Enviar</string>
+</resources>
