@@ -1,6 +1,7 @@
 package com.corpex.practicaandroid;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,9 +10,10 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 
 
-public class MainActivity extends AppCompatActivity implements FragmentManager.OnBackStackChangedListener {
+public class MainActivity extends AppCompatActivity implements FragmentManager.OnBackStackChangedListener, UnoFragment.OnAlumnoSelectedListener {
     private FragmentManager gestor;
     private FrameLayout detalle;
+    //fllista = fragmento 1 fldetalles = fragmento2
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,26 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
     }
 
     //Faltaria algo asi como onAlumnoSelected
+    @Override
+    public void onAlumnoSelected(Alumno alumno, int position) {
+        // Si hay FrameLayout de detalle (puede que no haya porque por el tamaño
+        // del dispositivo tengamos dos actividades distintas).
+        if (detalle != null) {
+            // Se muestra el detalle de la obra.
+            mostrarFragmentoDetalle(alumno, position);
+        } else {
+            // Hay dos actividades. Se llama a la otra actividad pasándole la
+            // obra a mostrar (cuya clase debe implementar Parcelable).
+            Intent i = new Intent(this, Activity2.class);
+            //i.putExtra(DosFragment.EXTRA_ALUMNO, alumno);
+            this.startActivity(i);
+        }
+    }
+
+    //mostrar la secundaria
+    private void mostrarFragmentoDetalle(Alumno alumno, int position) {
+
+    }
     //Faltaria un metodo para cargar el detalle en el framelayout correspondiente
     // Faltaria Cuando se muestra un determinado detalle (necesario para la actualización de la interfaz con la BackStack.
 
@@ -53,4 +75,6 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
             }
         }
     }
+
+
 }

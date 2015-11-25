@@ -65,6 +65,6 @@ public class AlumnoAdapter extends ArrayAdapter<Alumno> {
         holder.nombre.setText(datos.get(position).getNombre());
         holder.edad.setText(datos.get(position).getEdad());
         holder.ciudad.setText(datos.get(position).getCiudad());
-        holder.perfil.setImageResource(datos.get(position).getIdPerfil());//???????????
+       // holder.perfil.setImageResource(datos.get(position).getIdPerfil());//???????????
     }
 }

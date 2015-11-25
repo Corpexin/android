@@ -17,7 +17,7 @@ public class UnoFragment extends Fragment implements AdapterView.OnItemClickList
     // Interfaz para notificación de eventos desde el fragmento.
     public interface OnAlumnoSelectedListener {
         // Cuando se selecciona un alumno
-        public void onAlumnoSelected(Alumno obra, int position); //position?
+        public void onAlumnoSelected(Alumno alumno, int position); //position?
     }
 
     private ListView listaAlumnos;
