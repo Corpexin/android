@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                     Persona p = new Persona(etNombre.getText().toString(), Integer.parseInt(etEdad.getText().toString()));
                     Intent i = new Intent(MainActivity.this, Activity2.class);
                     i.putExtra(ALUMNO, p);
-                    startActivity(i);
+                    startActivity(i );
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "Rellena Nombre y Edad primero",Toast.LENGTH_SHORT).show();

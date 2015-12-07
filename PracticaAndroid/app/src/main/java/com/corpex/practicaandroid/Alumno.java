@@ -1,9 +1,12 @@
 package com.corpex.practicaandroid;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by Corpex, by the Grace of God on 19/11/2015.
  */
-public class Alumno {
+public class Alumno implements Parcelable{
     private String nombre;
     private String edad;
     private String ciudad;
@@ -28,5 +31,50 @@ public class Alumno {
         return telefono;
     }
     public int getIdPerfil(){return idPerfil;}
+
+
+    // Desde aquí para que sea Parcelable.
+
+    // Constructor.
+    protected Alumno(Parcel in) {
+        readFromParcel(in);
+    }
+
+    // Implementación por defecto.
+    public int describeContents() {
+        return 0;
+    }
+
+    // Escribir las propiedades del objeto en un Parcel de destino.
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(nombre);
+        dest.writeString(edad);
+        dest.writeString(ciudad);
+        dest.writeString(calle);
+        dest.writeString(telefono);
+        dest.writeInt(idPerfil);
+    }
+
+    // Leer desde un Parcel las propiedades del objeto.
+    public void readFromParcel(Parcel in) {
+        nombre = in.readString();
+        edad = in.readString();
+        ciudad = in.readString();
+        calle = in.readString();
+        telefono = in.readString();
+        idPerfil = in.readInt();
+    }
+
+    // Creador del objeto Parcelable.
+    public static final Parcelable.Creator<Alumno> CREATOR = new Parcelable.Creator<Alumno>() {
+        // Crea un objeto Alumno a partir de un Parcel.
+        public Alumno createFromParcel(Parcel in) {
+            return new Alumno(in);
+        }
+        // Crea un array de alumnos del tamaño pasado como parámetro.
+        public Alumno[] newArray(int size) {
+            return new Alumno[size];
+        }
+    };
 
 }

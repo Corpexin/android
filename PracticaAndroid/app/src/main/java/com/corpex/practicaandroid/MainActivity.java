@@ -1,6 +1,7 @@
 package com.corpex.practicaandroid;
 
 import android.content.Intent;
+import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
         //ACTIVAR CUANDO SE CREE LA SEGUNDA ACTIVIDAD DETALLES detalle = (FrameLayout) this.findViewById(R.id.flHueco);
         //Obtencion del Gestor del Fragmento
         gestor = getSupportFragmentManager();
-        //La clase actuara como listener eb BackStack
+        //La clase actuara como listener en BackStack
         gestor.addOnBackStackChangedListener(this);
         //Se carga el fragmento si no esta cargado ya
         UnoFragment unoFrg = (UnoFragment) gestor.findFragmentById(R.id.flHueco); //??????
@@ -46,7 +47,9 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
             // Hay dos actividades. Se llama a la otra actividad pasándole la
             // obra a mostrar (cuya clase debe implementar Parcelable).
             Intent i = new Intent(this, Activity2.class);
-            //i.putExtra(DosFragment.EXTRA_ALUMNO, alumno);
+            ////////HACER UN PARCELABLE Y ENVIARLO A LA ACTIVIDAD 2
+            ////////HACER QUE LA ACTIVIDAD 2 LO RECIBA Y CAMBIE LOS DATOS
+            i.putExtra(DosFragment.EXTRA_ALUMNO, alumno);
             this.startActivity(i);
         }
     }
