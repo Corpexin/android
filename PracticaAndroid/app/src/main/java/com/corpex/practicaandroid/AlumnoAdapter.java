@@ -65,7 +65,7 @@ public class AlumnoAdapter extends ArrayAdapter<Alumno> {
             perfil = (ImageView) itemView.findViewById(R.id.ivPerfil);
         }
 
-        public void bind(Alumno alumno) {
+        public void bind(final Alumno alumno) {
             nombre.setText(alumno.getNombre());
             edad.setText(alumno.getEdad());
             ciudad.setText(alumno.getCiudad());
@@ -73,14 +73,14 @@ public class AlumnoAdapter extends ArrayAdapter<Alumno> {
             // holder.perfil.setImageResource(datos.get(position).getIdPerfil());//???????????
 
 
-           if(perfil != null){
+
                Thread thread = new Thread(new Runnable(){
                    @Override
                    public void run() {
                        try {
                            URL url;
                            try {
-                               url = new URL("http://lorempixel.com/80/80/people");
+                               url = new URL("http://lorempixel.com/80/80/people/"+alumno.getIdPerfil()+"/");
                                Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
                                perfil.setImageBitmap(bmp);
                            } catch (IOException e) {
@@ -93,7 +93,7 @@ public class AlumnoAdapter extends ArrayAdapter<Alumno> {
                });
 
                thread.start();
-           }
+
 
 
 
