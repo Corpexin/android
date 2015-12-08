@@ -15,6 +15,12 @@ import android.widget.TextView;
 
 
 public class DosFragment extends Fragment {
+    // Interfaz para notificación de eventos desde el fragmento.
+    public interface OnDetalleShownListener {
+        // Cuando se selecciona un alumno.
+        public void onDetalleShown(int position);
+    }
+
     public static final String EXTRA_ALUMNO = "alumno";
     public static final String EXTRA_POSITION = "position";
     ImageView ivFotoAlumno;
@@ -27,27 +33,22 @@ public class DosFragment extends Fragment {
     int mPosition;
     private OnDetalleShownListener mListener;
 
-    // Interfaz para notificación de eventos desde el fragmento.
-    public interface OnDetalleShownListener {
-        // Cuando se selecciona un alumno.
-        public void onDetalleShown(int position);
-    }
-
-    //Cuando se crea el fragmento
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        // Se mantendrá la instancia del fragmento al cambiar la configuración.
-        setRetainInstance(true);
-        super.onCreate(savedInstanceState);
+    public static DosFragment newInstance(Alumno alumno, int position) {
+        DosFragment frgDetalle = new DosFragment();
+        Bundle argumentos = new Bundle();
+        argumentos.putParcelable(EXTRA_ALUMNO, alumno);
+        argumentos.putInt(EXTRA_POSITION, position);
+        frgDetalle.setArguments(argumentos);
+        return frgDetalle;
     }
 
     // Retorna la vista que mostrará el fragmento.
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Se infla el layout del fragmento y se retorna la vista.
         return inflater.inflate(R.layout.fragment_dos, container, false);
     }
+
 
     // Cuando se vincula el fragmento a la actividad.
     @Override
@@ -70,10 +71,10 @@ public class DosFragment extends Fragment {
         mListener = null;
     }
 
+
     // Cuando se ha terminado de crear la actividad al completo.
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
         // Se obtienen e inicializan las vistas.
         initVistas();
 
@@ -84,7 +85,20 @@ public class DosFragment extends Fragment {
         if (mAlumno != null) {
             mostrarDetalle();
         }
+        super.onActivityCreated(savedInstanceState);
 
+    }
+
+    // Obtiene e inicializa las vistas.
+    private void initVistas() {
+        if (getView() != null) {
+            ivFotoAlumno = (ImageView) getView().findViewById(R.id.ivImagenAlumno);
+            tvNombre = (TextView) getView().findViewById(R.id.tvNombre);
+            tvEdad = (TextView) getView().findViewById(R.id.tvEdad);
+            tvCiudad = (TextView) getView().findViewById(R.id.tvCiudad);
+            tvCalle = (TextView) getView().findViewById(R.id.tvCalle);
+            tvTelefono = (TextView) getView().findViewById(R.id.tvTelefono);
+        }
     }
 
     // Muestra el detalle de un album en las vistas correspondientes.
@@ -101,26 +115,9 @@ public class DosFragment extends Fragment {
         }
     }
 
-    public static DosFragment newInstance(Alumno alumno, int position) {
-        DosFragment frgDetalle = new DosFragment();
-        Bundle argumentos = new Bundle();
-        argumentos.putParcelable(EXTRA_ALUMNO, alumno);
-        argumentos.putInt(EXTRA_POSITION, position);
-        frgDetalle.setArguments(argumentos);
-        return frgDetalle;
-    }
+
     
-    // Obtiene e inicializa las vistas.
-    private void initVistas() {
-        if (getView() != null) {
-            ivFotoAlumno = (ImageView) getView().findViewById(R.id.ivImagenAlumno);
-            tvNombre = (TextView) getView().findViewById(R.id.tvNombre);
-            tvEdad = (TextView) getView().findViewById(R.id.tvEdad);
-            tvCiudad = (TextView) getView().findViewById(R.id.tvCiudad);
-            tvCalle = (TextView) getView().findViewById(R.id.tvCalle);
-            tvTelefono = (TextView) getView().findViewById(R.id.tvTelefono);
-        }
-    }
+
 
 
 

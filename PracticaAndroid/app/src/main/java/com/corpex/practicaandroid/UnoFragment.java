@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -67,16 +68,16 @@ public class UnoFragment extends Fragment implements AdapterView.OnItemClickList
         // Se obtienen e inicializan las vistas.
         initVistas();
         // Se comprueba si existe el fragmento de detalle y por tanto se usa dos paneles.
-        //FrameLayout flDetalle = (FrameLayout) getActivity().findViewById(R.id.flDetalle);
-        //boolean mDosPaneles = flDetalle != null && flDetalle.getVisibility() == View.VISIBLE;
+        FrameLayout flHueco2 = (FrameLayout) getActivity().findViewById(R.id.flHueco2);
+        boolean mDosPaneles = flHueco2 != null && flHueco2.getVisibility() == View.VISIBLE;
         // El fragmento actuará como listener cuando se pulse sobre un elemento
         // de la lista.
         listaAlumnos.setOnItemClickListener(this);
-        //if (mDosPaneles) {
-        //    pulsarItem(mItemSeleccionado);
-        //} else {
-        //    marcarObra(mItemSeleccionado);
-        //}
+        if (mDosPaneles) {
+            pulsarItem(mItemSeleccionado);
+        } else {
+            marcarAlumno(mItemSeleccionado);
+        }
     }
 
     // Cuando se "pulsa" sobre un elemento. Recibe la posición.
