@@ -3,13 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="8dp"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp"
-    android:paddingTop="8dp"
     tools:context=".MainActivity"
     android:orientation="vertical">
-
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
     <FrameLayout
         android:id="@+id/flHueco2"
         android:layout_width="match_parent"

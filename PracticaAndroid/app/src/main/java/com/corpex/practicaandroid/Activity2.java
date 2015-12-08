@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 public class Activity2 extends AppCompatActivity implements DosFragment.OnDetalleShownListener {
@@ -14,6 +15,13 @@ public class Activity2 extends AppCompatActivity implements DosFragment.OnDetall
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
+        //Conectamos la toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        // La ActionBar mostrará el icono de navegación.
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         FragmentManager gestor = this.getSupportFragmentManager();
         android.support.v4.app.FragmentTransaction transaccion= gestor.beginTransaction();
         DosFragment dosFrgt = DosFragment.newInstance((Alumno) getIntent().getExtras().getParcelable(DosFragment.EXTRA_ALUMNO), getIntent().getExtras().getInt(DosFragment.EXTRA_POSITION));

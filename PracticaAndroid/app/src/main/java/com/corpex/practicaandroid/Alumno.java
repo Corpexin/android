@@ -1,7 +1,13 @@
 package com.corpex.practicaandroid;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.widget.ImageView;
+
+import java.io.IOException;
+import java.net.URL;
 
 /**
  * Created by Corpex, by the Grace of God on 19/11/2015.
@@ -13,6 +19,7 @@ public class Alumno implements Parcelable{
     private String calle;
     private String telefono;
     private int idPerfil;
+    private Bitmap imagen;
 
     public Alumno(String nombre, String edad, String ciudad, String calle, String telefono, int idPerfil){
         this.nombre = nombre;
@@ -23,6 +30,41 @@ public class Alumno implements Parcelable{
         this.idPerfil = idPerfil;
     }
 
+    private void cambiarImagen() {
+       if(imagen==null){ //solo carga las imagenes si no las ha cargado antes
+           Thread thread = new Thread(new Runnable(){ //como el main no puede hacer labores de conexiones de red creo un nuevo thread
+               @Override
+               public void run() {
+                   try {
+                       URL url;
+                       //El thread intenta coger la
+                       try {
+                           url = new URL("http://lorempixel.com/80/80/people/"+idPerfil+"/");
+                           imagen = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+                       } catch (IOException e) {
+                           e.printStackTrace();
+                       }
+                   } catch (Exception e) {
+                       e.printStackTrace();
+                   }
+               }
+           });
+
+           thread.start();
+           //Me espero a que carguen las imagenes. Esto puede ralentizar el programa cuando se va
+           //haciendo scroll una primera vez, pero si no lo hago, las imagenes suelen aparecer por
+           //defecto sin cargar
+           try {
+               thread.join();
+           } catch (InterruptedException e) {
+               e.printStackTrace();
+           }
+       }
+
+    }
+    public Bitmap getImagen(){
+        cambiarImagen();
+        return imagen;}
     public String getEdad() {return edad;}
     public String getNombre() {return nombre;}
     public String getCiudad(){return ciudad;}

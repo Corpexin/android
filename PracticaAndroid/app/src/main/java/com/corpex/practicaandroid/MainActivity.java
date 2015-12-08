@@ -5,7 +5,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
@@ -19,6 +21,9 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Conectamos la toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         //Obtenicon de Vista
         flHueco2 = (FrameLayout) this.findViewById(R.id.flHueco2);
         //Obtencion del Gestor del Fragmento
@@ -34,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
         }
     }
 
-    //Faltaria algo asi como onAlumnoSelected
     @Override
     public void onAlumnoSelected(Alumno alumno, int position) {
         // Si hay FrameLayout de detalle (puede que no haya porque por el tamaño
@@ -92,5 +96,7 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
             }
         }
     }
+
+
 
 }

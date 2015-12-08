@@ -97,7 +97,7 @@ public class UnoFragment extends Fragment implements AdapterView.OnItemClickList
         Alumno alumno = (Alumno) listaAlumnos.getItemAtPosition(mItemSeleccionado);
         listaAlumnos.setItemChecked(mItemSeleccionado, true);
         listaAlumnos.setSelection(mItemSeleccionado);
-        getActivity().setTitle(alumno.getNombre());
+        //getActivity().setTitle(alumno.getNombre());
     }
 
     // Obtiene e inicializa las vistas.
@@ -113,7 +113,7 @@ public class UnoFragment extends Fragment implements AdapterView.OnItemClickList
     public ArrayList<Alumno> getDatos() {
         ArrayList<Alumno> alumnos = new ArrayList<>();
         alumnos.add(new Alumno("Pepe Gutierrez Gomez", "17", "Algeciras", "Avda Falsa 123", "tel:(+34)123456789", 1));
-        alumnos.add(new Alumno("Maria Ortega Semperez", "23", "La Linea", "Avda Verdadera 453", "tel:(+34)123356789", 2));
+        alumnos.add(new Alumno("Maria Jimenez Semperez", "23", "La Linea", "Avda Verdadera 453", "tel:(+34)123356789", 2));
         alumnos.add(new Alumno("Gustavo Adolfo Benitez", "43", "Los Barrios", "Avda Flores 233", "tel:(+34)123556789", 3));
         alumnos.add(new Alumno("Gertrudio Benicio Solomero", "42", "Algeciras", "Avda Erquillo 654", "tel:(+34)126456789", 4));
         alumnos.add(new Alumno("Amparo Sindientes Gomez", "18", "Algeciras", "Avda Mugro 453", "tel:(+34)123454789", 5));
@@ -122,7 +122,7 @@ public class UnoFragment extends Fragment implements AdapterView.OnItemClickList
         alumnos.add(new Alumno("Rotero Shurmano Valle", "17", "Cadiz", "Avda Canguro Paquillo 153", "tel:(+34)153456789", 8));
         alumnos.add(new Alumno("Siruelo Gonzalez Benevolente", "34", "Algeciras", "Avda Aquitepillo 363", "tel:(+34)115456789", 9));
         alumnos.add(new Alumno("Gertrudis Zalamera Fernandez", "24", "Tarifa", "Avda Falsa 453", "tel:(+34)123455489", 10));
-        alumnos.add(new Alumno("Gonzalo Quilombo Guerrero", "45", "Los Barrios", "Avda Eltruco 563", "tel:(+34)164456789", 11));
+        alumnos.add(new Alumno("Gonzalo Quilombo Guerrero", "45", "Los Barrios", "Avda Eltruco 563", "tel:(+34)164456789", 1));
         return alumnos;
     }
 

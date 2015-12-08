@@ -2,19 +2,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:baselineAligned="false"
-    android:orientation="horizontal">
+    android:orientation="vertical">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
-    <FrameLayout
-        android:id="@+id/flHueco"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="40"/>
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+        <FrameLayout
+            android:id="@+id/flHueco"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40" />
 
-    <FrameLayout
-        android:id="@+id/flHueco2"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="60"/>
+        <FrameLayout
+            android:id="@+id/flHueco2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="60"/>
+    </LinearLayout>
 
 </LinearLayout>
