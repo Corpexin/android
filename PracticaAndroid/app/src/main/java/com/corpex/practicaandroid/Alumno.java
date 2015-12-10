@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.widget.ImageView;
 
 import java.io.IOException;
 import java.net.URL;
@@ -30,40 +29,25 @@ public class Alumno implements Parcelable{
         this.idPerfil = idPerfil;
     }
 
-    private void cambiarImagen() {
+    public void cambiarImagen() {
        if(imagen==null){ //solo carga las imagenes si no las ha cargado antes
-           Thread thread = new Thread(new Runnable(){ //como el main no puede hacer labores de conexiones de red creo un nuevo thread
-               @Override
-               public void run() {
-                   try {
-                       URL url;
-                       //El thread intenta coger la
-                       try {
-                           url = new URL("http://lorempixel.com/80/80/people/"+idPerfil+"/");
-                           imagen = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                       } catch (IOException e) {
-                           e.printStackTrace();
-                       }
-                   } catch (Exception e) {
-                       e.printStackTrace();
-                   }
-               }
-           });
-
-           thread.start();
-           //Me espero a que carguen las imagenes. Esto puede ralentizar el programa cuando se va
-           //haciendo scroll una primera vez, pero si no lo hago, las imagenes suelen aparecer por
-           //defecto sin cargar
+       try {
+           URL url;
            try {
-               thread.join();
-           } catch (InterruptedException e) {
+               url = new URL("http://lorempixel.com/320/320/people/"+idPerfil+"/");
+               imagen = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+           } catch (IOException e) {
                e.printStackTrace();
            }
+       } catch (Exception e) {
+           e.printStackTrace();
        }
-
+       }
     }
+
+
     public Bitmap getImagen(){
-        cambiarImagen();
+        //cambiarImagen();
         return imagen;}
     public String getEdad() {return edad;}
     public String getNombre() {return nombre;}
@@ -72,7 +56,6 @@ public class Alumno implements Parcelable{
     public String getTelefono() {
         return telefono;
     }
-    public int getIdPerfil(){return idPerfil;}
 
 
     // Desde aquí para que sea Parcelable.

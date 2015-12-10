@@ -20,7 +20,8 @@
             android:layout_centerHorizontal="false"
             android:contentDescription="@string/image"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp">
+            android:paddingRight="10dp"
+            android:src="@drawable/ic_action_name">
 
         </ImageView>
 
@@ -40,9 +41,9 @@
 
         <TextView
             android:id="@+id/lblEdad"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="22 años"
+            tools:text="22"
             style="@style/Base.TextAppearance.AppCompat.Body2"
             android:layout_below="@+id/lblNombre"
             android:layout_toRightOf="@+id/ivPerfil"
@@ -59,7 +60,17 @@
             android:layout_toRightOf="@+id/ivPerfil"
             android:layout_toEndOf="@+id/ivPerfil"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp"/>
+            android:paddingRight="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ans"
+            android:id="@+id/tvan"
+            android:layout_below="@+id/lblNombre"
+            android:layout_toRightOf="@+id/lblEdad"
+            android:layout_toEndOf="@+id/lblEdad"
+            style="@style/Base.TextAppearance.AppCompat.Body2" />
 
     </RelativeLayout>
 </android.support.v7.widget.CardView>

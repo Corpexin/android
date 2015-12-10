@@ -1,10 +1,19 @@
 <resources>
     <string name="app_name">PracticaAndroid</string>
 
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="listado_de_alumnos">Listado</string>
     <string name="image">image</string>
     <string name="title_activity_2">Activity2</string>
     <string name="imagen">image</string>
+    <string name="next">Añadir</string>
+    <string name="tel">Telefono</string>
+    <string name="nombre">Nombre</string>
+    <string name="ed">Edad</string>
+    <string name="c">Ciudad</string>
+    <string name="t">Telefono</string>
+    <string name="call">Calle</string>
+    <string name="title_activit_3">Añadir Alumno</string>
+    <string name="ans">años</string>
 </resources>

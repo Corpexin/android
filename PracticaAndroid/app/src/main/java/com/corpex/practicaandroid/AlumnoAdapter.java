@@ -2,24 +2,16 @@ package com.corpex.practicaandroid;
 
 import android.content.Context;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.text.Layout;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 
-/**
- * Created by Corpex, by the Grace of God on 19/11/2015.
- */
+
 public class AlumnoAdapter extends ArrayAdapter<Alumno> {
     private ArrayList<Alumno> datos;
     private final LayoutInflater inflador;
@@ -47,6 +39,7 @@ public class AlumnoAdapter extends ArrayAdapter<Alumno> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.bind(datos.get(position));
     }
+
 
     private static class ViewHolder {
         private final TextView nombre;
