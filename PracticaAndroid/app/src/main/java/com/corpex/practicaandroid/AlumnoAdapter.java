@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 
@@ -38,8 +41,8 @@ public class AlumnoAdapter extends ArrayAdapter<Alumno> {
 
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.bind(datos.get(position));
+        Picasso.with(getContext()).load("http://lorempixel.com/320/320/people/"+Coleccion.getListaAlumnos().get(position).getIdPerfil()).placeholder(R.mipmap.user_placeholder).resize(150, 150).centerCrop().into(holder.imagen);
     }
-
 
     private static class ViewHolder {
         private final TextView nombre;

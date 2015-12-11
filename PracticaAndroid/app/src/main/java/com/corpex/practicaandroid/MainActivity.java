@@ -12,17 +12,12 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity implements FragmentManager.OnBackStackChangedListener, UnoFragment.OnAlumnoSelectedListener, DosFragment.OnDetalleShownListener {
-    private static final int RC_NUEVOAL = 1;
-    private static final String STATE_LISTA = "estadoLista";
-    public static final int RC_OTRA = 3;
     private FragmentManager gestor;
     private FrameLayout flHueco2;
-    ArrayList<Alumno> lista;
-    //ArrayList<Alumno> listaRemove;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,19 +30,13 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
         flHueco2 = (FrameLayout) this.findViewById(R.id.flHueco2);
         //Obtencion del Gestor del Fragmento
         gestor = getSupportFragmentManager();
+        UnoFragment unoFrg = (UnoFragment) gestor.findFragmentById(R.id.flHueco);
         //La clase actuara como listener en BackStack
+        if(unoFrg == null) {
+             unoFrg = new UnoFragment();
+            gestor.beginTransaction().add(R.id.flHueco, unoFrg, "frgUno").commit();
+        }
         gestor.addOnBackStackChangedListener(this);
-        if(savedInstanceState != null){
-            lista = savedInstanceState.getParcelableArrayList(STATE_LISTA);
-            actualizarFragmentoUno();
-        }
-        else{
-            FragmentManager gestor = this.getSupportFragmentManager();
-            android.support.v4.app.FragmentTransaction transaccion= gestor.beginTransaction();
-            UnoFragment unoFrgt = UnoFragment.newInstance(lista);
-            transaccion.replace(R.id.flHueco, unoFrgt);
-            transaccion.commitAllowingStateLoss();
-        }
 
     }
 
@@ -61,12 +50,11 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
             //Hay dos actividades. Creo la activity2 y le paso el alumno y la lista de añadidos
             Intent i = new Intent(this, Activity2.class);
             i.putExtra(DosFragment.EXTRA_ALUMNO, alumno);
-            i.putExtra(Activity2.EXTRA_LISTA, lista);
-            i.putExtra("BitmapImage", alumno.getImagen());
-            startActivityForResult(i, RC_OTRA);
+            //i.putExtra("BitmapImage", alumno.getImagen());
+            startActivity(i);
         }
     }
-
+    /**
     //Recarga  el fragmento uno (para cuando insertemeos un nuevo alumno)
     private void actualizarFragmentoUno() {
         FragmentManager gestor = this.getSupportFragmentManager();
@@ -75,6 +63,28 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
         transaccion.replace(R.id.flHueco, unoFrgt);
         transaccion.commitAllowingStateLoss();
     }
+    **/
+
+    //Toolbar Botones
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_main, menu);
+        return true;
+    }
+
+    //Si se pulsa el añadir usuario inicia actividad 3
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.mnuNext) {
+            startActivity(new Intent(this, Activity3.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
 
     //mostrar la secundaria
     private void mostrarFragmentoDos(Alumno alumno, int position) {
@@ -86,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
         transaccion.commit();
     }
 
+    //backstack bussiness
     @Override
     public void onDetalleShown(int position) {
         UnoFragment frg = (UnoFragment) gestor.findFragmentById(R.id.flHueco);
@@ -93,6 +104,7 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
             frg.marcarAlumno(position);
         }
     }
+
 
     @Override
     public void onBackStackChanged() {
@@ -108,50 +120,6 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
                 toast.show();
             }
         }
-    }
-
-    //Toolbar Botones
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_main, menu);
-        return true;
-    }
-
-    //Si se pulsa el añadir usuario inicia actividad 3
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.mnuNext) {
-            startActivityForResult(new Intent(this, Activity3.class), RC_NUEVOAL);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    //Recibir alumno creado en actividad 3
-    public void onActivityResult(int requestCode, int resultCode, Intent data){
-        if (resultCode == Activity3.ID_RESULT) {
-            if(lista == null){
-                lista = new ArrayList<>();
-            }
-            lista.add((Alumno)data.getParcelableExtra(Activity3.ALUMNO));
-            actualizarFragmentoUno();
-            Toast.makeText(this,"Alumno Creado Correctamente", Toast.LENGTH_SHORT).show();
-
-        }
-        else if(resultCode == Activity2.RESULT_OK){
-            lista = data.getParcelableArrayListExtra(Activity2.EXTRA_LISTA);
-            actualizarFragmentoUno();
-            Toast.makeText(this,"RECARGADO", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    //Evitamos perder la lista al girar la pantalla
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putParcelableArrayList(STATE_LISTA, lista);
     }
 
 }

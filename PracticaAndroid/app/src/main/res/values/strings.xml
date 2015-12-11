@@ -16,4 +16,7 @@
     <string name="call">Calle</string>
     <string name="title_activit_3">Añadir Alumno</string>
     <string name="ans">años</string>
+    <string name="si">Si</string>
+    <string name="no">No</string>
+    <string name="elim">Eliminar alumno?</string>
 </resources>

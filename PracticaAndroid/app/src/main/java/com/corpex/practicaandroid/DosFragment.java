@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-
+//Fragmento con los detalle de un alumno concreto que se mostrar en la main y en la act2 segun orientacion
 public class DosFragment extends Fragment {
 
 
@@ -30,14 +30,7 @@ public class DosFragment extends Fragment {
     int mPosition;
     private OnDetalleShownListener mListener;
 
-    public static DosFragment newInstance(Alumno alumno, int position) {
-        DosFragment frgDetalle = new DosFragment();
-        Bundle argumentos = new Bundle();
-        argumentos.putParcelable(EXTRA_ALUMNO, alumno);
-        argumentos.putInt(EXTRA_POSITION, position);
-        frgDetalle.setArguments(argumentos);
-        return frgDetalle;
-    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -97,10 +90,14 @@ public class DosFragment extends Fragment {
     }
 
 
-
-
-
-
+    public static DosFragment newInstance(Alumno alumno, int position) {
+        DosFragment frgDetalle = new DosFragment();
+        Bundle argumentos = new Bundle();
+        argumentos.putParcelable(EXTRA_ALUMNO, alumno);
+        argumentos.putInt(EXTRA_POSITION, position);
+        frgDetalle.setArguments(argumentos);
+        return frgDetalle;
+    }
 
 
 }

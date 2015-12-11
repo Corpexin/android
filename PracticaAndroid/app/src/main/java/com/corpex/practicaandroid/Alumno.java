@@ -29,26 +29,8 @@ public class Alumno implements Parcelable{
         this.idPerfil = idPerfil;
     }
 
-    public void cambiarImagen() {
-       if(imagen==null){ //solo carga las imagenes si no las ha cargado antes
-       try {
-           URL url;
-           try {
-               url = new URL("http://lorempixel.com/320/320/people/"+idPerfil+"/");
-               imagen = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-           } catch (IOException e) {
-               e.printStackTrace();
-           }
-       } catch (Exception e) {
-           e.printStackTrace();
-       }
-       }
-    }
 
-
-    public Bitmap getImagen(){
-        //cambiarImagen();
-        return imagen;}
+    public Bitmap getImagen(){return imagen;}
     public String getEdad() {return edad;}
     public String getNombre() {return nombre;}
     public String getCiudad(){return ciudad;}
@@ -56,6 +38,7 @@ public class Alumno implements Parcelable{
     public String getTelefono() {
         return telefono;
     }
+    public int getIdPerfil(){return idPerfil;}
 
 
     // Desde aquí para que sea Parcelable.

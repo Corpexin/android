@@ -1,6 +1,5 @@
 package com.corpex.practicaandroid;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -10,12 +9,13 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Random;
 
+
+//Activity para a;adir un alumno
 public class Activity3 extends AppCompatActivity {
-    static final String ALUMNO = "alumno";
-    static final int ID_RESULT = 2;
     EditText etNombre;
     EditText etEdad;
     EditText etCiudad;
@@ -150,25 +150,14 @@ public class Activity3 extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Random rnd = new Random(); //Asigna un id para imagen aleatorio
+                Coleccion.addAlumno(new Alumno(etNombre.getText().toString(), etEdad.getText().toString(), etCiudad.getText().toString(), etCalle.getText().toString(), etTelefono.getText().toString(), rnd.nextInt(9)+1));
+                Toast.makeText(getApplication(), "Alumno Creado Correctamente", Toast.LENGTH_SHORT).show();
             }
         });
 
     }
 
-    //Devuelvo el alumno agregado
-    public void finish(){
-        Random rnd = new Random();
-        Intent i = new Intent();
-        if(!etNombre.getText().toString().matches("") && !etEdad.getText().toString().matches("") && !etCiudad.getText().toString().matches("")) {
-            Alumno mAlumno = new Alumno(etNombre.getText().toString(), etEdad.getText().toString(), etCiudad.getText().toString(),
-                    etCalle.getText().toString(), etTelefono.getText().toString(), rnd.nextInt(10));
-            i.putExtra(ALUMNO, mAlumno);
-            setResult(ID_RESULT, i);
-        }else{
-            setResult(RESULT_CANCELED);
-        }
-        super.finish();
-    }
+
 
 }
