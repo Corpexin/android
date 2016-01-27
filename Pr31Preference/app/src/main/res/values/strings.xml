@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Pr31Preference</string>
+    <string name="preferencias">preferencias</string>
+    <string name="title_activity_preferencias">Preferencias</string>
 </resources>
