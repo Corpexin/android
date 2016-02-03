@@ -72,8 +72,7 @@ public class PreferenciasFragment extends PreferenceFragment implements
     public void onResume() {
         // Se registra la actividad como listener de los cambios en las
         // preferencias.
-        getPreferenceScreen().getSharedPreferences()
-                .registerOnSharedPreferenceChangeListener(this);
+        getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
         super.onResume();
     }
 

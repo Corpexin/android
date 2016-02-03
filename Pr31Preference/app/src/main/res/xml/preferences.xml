@@ -5,6 +5,11 @@
         <CheckBoxPreference
             android:key="prefSincronizar"
             android:title="Sincronizar"/>
+        <EditTextPreference
+            android:key="prefLema"
+            android:title="@string/lema"
+            android:summary="@string/lema_detalle"
+            android:dialogTitle="@string/lema" />
     </PreferenceCategory>
 
 </PreferenceScreen>

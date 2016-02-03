@@ -35,7 +35,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         if (preferencias != null) {
-
+            preferencias = PreferenceManager.getDefaultSharedPreferences(this);
+            String lema = preferencias.getString("prefLema", "");
+            setTitle(lema);
         }
         super.onResume();
     }

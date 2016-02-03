@@ -19,8 +19,6 @@ public class PreferenciasActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
         // Se muestra el fragmento en la actividad.
-        getFragmentManager().beginTransaction()
-                .replace(R.id.flContenido, new PreferenciasFragment())
-                .commit();
+        getFragmentManager().beginTransaction().replace(R.id.flContenido, new PreferenciasFragment()).commit();
     }
 }

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Pr32SQLite</string>
+    <string name="action_settings">Settings</string>
+    <string name="nombre">Nombre:</string>
+    <string name="curso">Curso:</string>
+    <string name="te">telefono</string>
+    <string name="direccion">Direccion:</string>
+    <string name="edad">Edad:</string>
+    <string name="en">Enviar</string>
+</resources>
