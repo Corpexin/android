@@ -106,6 +106,16 @@ public class AlumnosAdapter extends RecyclerView.Adapter<AlumnosAdapter.ViewHold
         checkIfEmpty();
     }
 
+    // Modifica un elemento a la lista.
+    public void updateItem(int index, Alumno alumno) {
+        // Se añade el elemento.
+        mDatos.set(index, alumno);
+        // Se notifica que se ha insertado un elemento en la última posición.
+        notifyItemChanged(index);
+        // Si la lista estaba vacía se oculta la empty view.
+        checkIfEmpty();
+    }
+
     // Intercambia dos elementos de la lista.
     void swapItems(int from, int to) {
         // Se realiza el intercambio.

@@ -37,6 +37,7 @@ public class DAO {
         valores.put(Constantes.Alumno.CURSO, alumno.getCurso());
         valores.put(Constantes.Alumno.TELEFONO, alumno.getTelefono());
         valores.put(Constantes.Alumno.DIRECCION, alumno.getDireccion());
+        valores.put(Constantes.Alumno.EDAD, alumno.getEdad());
 
         long resultado = bd.insert(Constantes.Alumno.TABLA, null, valores);
         mHelper.close();
@@ -64,6 +65,7 @@ public class DAO {
         valores.put(Constantes.Alumno.CURSO, alumno.getCurso());
         valores.put(Constantes.Alumno.TELEFONO, alumno.getTelefono());
         valores.put(Constantes.Alumno.DIRECCION, alumno.getDireccion());
+        valores.put(Constantes.Alumno.EDAD, alumno.getEdad());
 
         long resultado = bd.update(Constantes.Alumno.TABLA, valores, Constantes.Alumno._ID + " = " + alumno.getId(), null);
         mHelper.close();
@@ -102,6 +104,7 @@ public class DAO {
         alumno.setCurso(cursorAlumno.getString(cursorAlumno.getColumnIndexOrThrow(Constantes.Alumno.CURSO)));
         alumno.setTelefono(cursorAlumno.getString(cursorAlumno.getColumnIndexOrThrow(Constantes.Alumno.TELEFONO)));
         alumno.setDireccion(cursorAlumno.getString(cursorAlumno.getColumnIndexOrThrow(Constantes.Alumno.DIRECCION)));
+        alumno.setEdad(cursorAlumno.getInt(cursorAlumno.getColumnIndexOrThrow(Constantes.Alumno.EDAD)));
         return alumno;
     }
 }

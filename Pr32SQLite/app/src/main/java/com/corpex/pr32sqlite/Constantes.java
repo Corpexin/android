@@ -18,8 +18,9 @@ public class Constantes {
         public static final String CURSO = "curso";
         public static final String TELEFONO = "telefono";
         public static final String DIRECCION = "direccion";
+        public static final String EDAD="edad";
         public static final String[] TODOS = new String[] { _ID, FOTO, NOMBRE, CURSO,
-                TELEFONO, DIRECCION };
+                TELEFONO, DIRECCION, EDAD };
     }
 
     // Constructor privado para que NO pueda instanciarse.

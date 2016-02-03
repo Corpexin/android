@@ -18,10 +18,13 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements AlumnosAdapter.OnItemClickListener, AlumnosAdapter.OnItemLongClickListener{
     public static final String EXTRA_MOD = "Agregar";
     private static final int RC_NUEVO = 1;
+    private static final int RC_MODIF = 2;
+    private static final String EXTRA_AL = "alumno";
     ArrayList<Alumno> alumnos;
     RecyclerView lstAlumnos;
     AlumnosAdapter mAdaptador;
     LinearLayoutManager mLayoutManager;
+    int index;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,7 +94,11 @@ public class MainActivity extends AppCompatActivity implements AlumnosAdapter.On
 
     @Override
     public void onItemClick(View view, Alumno alumno, int position) {
-
+        index = position;
+        Intent intent = new Intent(this, Main2Activity.class);
+        intent.putExtra(EXTRA_MOD, true);
+        intent.putExtra(EXTRA_AL, alumno);
+        startActivityForResult(intent, RC_MODIF);
     }
 
     @Override
@@ -112,25 +119,19 @@ public class MainActivity extends AppCompatActivity implements AlumnosAdapter.On
                 //mAdaptador.notifyDataSetChanged();
                 Toast.makeText(this,"Insercion Correcta", Toast.LENGTH_SHORT).show();
 
+            } else if (requestCode == RC_MODIF && data.hasExtra(Main2Activity.EXTRA_ALUMNO)) {
+                alumno = data.getParcelableExtra(Main2Activity.EXTRA_ALUMNO);
+                if((new DAO(this)).updateAlumno(alumno)){
+                    mAdaptador.updateItem(index, alumno);
+                    Toast.makeText(this,"Modificacion Correcta", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(this,"Modificacion Incorrecta", Toast.LENGTH_SHORT).show();
+                }
             } else {
-                Toast.makeText(this,"Insercion INCorrecta", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Insercion Incorrecta", Toast.LENGTH_SHORT).show();
             }
-
-            /**} else if (requestCode == RC_EDIT_ALUMNO && data.hasExtra(Main2Activity.EXTRA_ALUMNO)){
-                a = data.getParcelableExtra(AgregarActualizarActivity.EXTRA_ALUMNO);
-                Instituto.getServicio().updateAlumno(a.getId(), a).enqueue(new Callback<Alumno>() {
-                    @Override
-                    public void onResponse(Response<Alumno> response) {
-
-                    }
-
-                    @Override
-                    public void onFailure(Throwable t) {
-
-                    }
-                });**/
-
         }
+
         super.onActivityResult(requestCode, resultCode, data);
     }
 }

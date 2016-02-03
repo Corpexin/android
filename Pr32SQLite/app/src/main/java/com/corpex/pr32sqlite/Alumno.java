@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 public class Alumno implements Parcelable {
     private Boolean repetidor;
-    private Integer edad;
+    private int edad;
     private String direccion;
     private String telefono;
     private String curso;
@@ -35,7 +35,7 @@ public class Alumno implements Parcelable {
     public Integer getEdad() {
         return edad;
     }
-    public void setEdad(Integer edad) {
+    public void setEdad(int edad) {
         this.edad = edad;
     }
     public String getDireccion() {
@@ -79,19 +79,23 @@ public class Alumno implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(edad);
         dest.writeString(direccion);
         dest.writeString(telefono);
         dest.writeString(curso);
         dest.writeString(nombre);
         dest.writeString(foto);
+        dest.writeInt(id);
     }
 
     protected Alumno(Parcel in) {
+        edad =  in.readInt();
         direccion = in.readString();
         telefono = in.readString();
         curso = in.readString();
         nombre = in.readString();
         foto = in.readString();
+        id = in.readInt();
     }
 
     public static final Creator<Alumno> CREATOR = new Creator<Alumno>() {

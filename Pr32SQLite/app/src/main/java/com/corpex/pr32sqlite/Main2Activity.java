@@ -45,7 +45,11 @@ public class Main2Activity extends AppCompatActivity {
     }
 
     private void cargarAlumno() {
-
+        txtNombre.setText(alumno.getNombre());
+        txtCurso.setText(alumno.getCurso());
+        txtTelefono.setText(alumno.getTelefono());
+        txtDireccion.setText(alumno.getDireccion());
+        txtEdad.setText(String.valueOf(alumno.getEdad()));
     }
 
     private void initViews() {
@@ -62,12 +66,11 @@ public class Main2Activity extends AppCompatActivity {
         if(alumno==null)
             alumno = new Alumno("http://lorempixel.com/400/200/", txtNombre.getText().toString(), txtCurso.getText().toString(), txtTelefono.getText().toString(), txtDireccion.getText().toString(), Integer.parseInt(txtEdad.getText().toString()), false);
         else{
-            alumno.setNombre(String.valueOf(txtNombre.getText().toString()));
-            alumno.setCurso(String.valueOf(txtCurso.getText().toString()));
-            alumno.setTelefono(String.valueOf(txtTelefono.getText().toString()));
-            alumno.setDireccion(String.valueOf(txtDireccion.getText().toString()));
+            alumno.setNombre(txtNombre.getText().toString());
+            alumno.setCurso(txtCurso.getText().toString());
+            alumno.setTelefono(txtTelefono.getText().toString());
+            alumno.setDireccion(txtDireccion.getText().toString());
             alumno.setEdad(Integer.parseInt(txtEdad.getText().toString()));
-            alumno.setRepetidor(true);
         }
         intent2 = new Intent();
         intent2.putExtra(EXTRA_ALUMNO, alumno);

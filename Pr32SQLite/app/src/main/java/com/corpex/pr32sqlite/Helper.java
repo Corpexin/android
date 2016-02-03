@@ -17,7 +17,8 @@ public class Helper extends SQLiteOpenHelper {
                     Constantes.Alumno.NOMBRE + " TEXT, " +
                     Constantes.Alumno.CURSO + " TEXT, " +
                     Constantes.Alumno.TELEFONO+ " TEXT,"+
-                    Constantes.Alumno.DIRECCION+ " TEXT"+
+                    Constantes.Alumno.DIRECCION+ " TEXT,"+
+                    Constantes.Alumno.EDAD+ " INTEGER"+
                     " )";
 
     public Helper(Context context) {
@@ -35,6 +36,7 @@ public class Helper extends SQLiteOpenHelper {
         registro.put(Constantes.Alumno.CURSO, "1CFGS");
         registro.put(Constantes.Alumno.TELEFONO, "666666666");
         registro.put(Constantes.Alumno.DIRECCION, "Avda Falsa 123");
+        registro.put(Constantes.Alumno.EDAD, 17);
         db.insert(Constantes.Alumno.TABLA, null, registro);
     }
 
