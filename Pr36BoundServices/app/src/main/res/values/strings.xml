@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Pr36BoundServices</string>
+    <string name="action_settings">Settings</string>
+    <string name="parar_servicio">Parar Servicio</string>
+    <string name="anterior">Anterior</string>
+    <string name="reproducir_pausar">Pausar</string>
+    <string name="siguiente">Siguiente</string>
+</resources>
