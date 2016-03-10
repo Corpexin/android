@@ -1,0 +1,22 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.corpex.examenandroid2alejandromadrid.ListaFragment">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lstCompra"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/list_paddingBottom"
+        android:paddingTop="@dimen/list_paddingTop"/>
+    <TextView
+        android:id="@+id/lblNoHayAlumnos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="No hay cosas"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</FrameLayout>

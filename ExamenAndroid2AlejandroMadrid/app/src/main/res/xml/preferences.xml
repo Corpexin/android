@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory>
+
+        <EditTextPreference
+            android:dialogTitle="Estado"
+            android:key="prefEstado"
+            android:summary="--"
+            android:title="Estado"
+            android:defaultValue="--"/>
+
+        <SwitchPreference
+            android:key="prefSonido"
+            android:summaryOff="off"
+            android:summaryOn="on"
+            android:switchTextOff="no"
+            android:switchTextOn="si"
+            android:title="Sonido"
+            android:defaultValue="off"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

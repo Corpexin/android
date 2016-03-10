@@ -1,0 +1,51 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+
+    <!-- Navigation drawer -->
+    <dimen name="navigation_drawer_paddingLeft">16dp</dimen>
+    <dimen name="navigation_drawer_paddingRight">16dp</dimen>
+    <dimen name="navigation_drawer_header_height">178dp</dimen>
+    <dimen name="navigation_drawer_header_textBox_height">56dp</dimen>
+    <dimen name="navigation_drawer_header_marginBottom">8dp</dimen>
+    <dimen name="navigation_drawer_header_profile_marginTop">16dp</dimen>
+
+    <!-- Fake Status Bar -->
+    <dimen name="statusBarHeight">0dp</dimen>
+    <dimen name="collapsingtoolbarHeight">@dimen/abc_action_bar_default_height_material</dimen>
+
+    <!-- RecyclerView -->
+    <dimen name="list_paddingTop">8dp</dimen>
+    <dimen name="list_paddingBottom">8dp</dimen>
+
+    <!-- Single line with avatar list item -->
+    <dimen name="two_line_tile_height">72dp</dimen>
+    <dimen name="two_line_avatar_width">40dp</dimen>
+    <dimen name="two_line_avatar_height">40dp</dimen>
+    <dimen name="two_line_avatar_marginTop">20dp</dimen>
+    <dimen name="two_line_avatar_marginLeft">16dp</dimen>
+    <dimen name="two_line_text_paddingTop">18dp</dimen>
+    <dimen name="two_line_secundary_text_paddingBottom">20dp</dimen>
+    <dimen name="two_line_text_paddingLeft">72dp</dimen>
+    <dimen name="two_line_text_marginRight">16dp</dimen>
+    <dimen name="two_line_secundary_icon_width">32dp</dimen>
+    <dimen name="two_line_secundary_icon_height">32dp</dimen>
+    <dimen name="two_line_secundary_icon_marginRight">16dp</dimen>
+
+    <!-- FAB -->
+    <dimen name="fab_margin_right">16dp</dimen>
+    <dimen name="fab_margin_bottom">16dp</dimen>
+
+    <!-- Collapsing Toolbar -->
+    <dimen name="extendedappbarHeight">128dp</dimen>
+    <dimen name="parallaxAppBarHeight">200dp</dimen>
+    <dimen name="fragment_tab2_padding">10dp</dimen>
+    <dimen name="ancho_visor">300dp</dimen>
+    <dimen name="alto_visor">200dp</dimen>
+</resources>
