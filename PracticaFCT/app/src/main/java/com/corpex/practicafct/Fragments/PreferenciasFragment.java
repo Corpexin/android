@@ -1,4 +1,4 @@
-package com.corpex.practicafct;
+package com.corpex.practicafct.Fragments;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.media.Ringtone;
@@ -14,6 +14,8 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.preference.RingtonePreference;
+
+import com.corpex.practicafct.R;
 
 import java.util.Set;
 

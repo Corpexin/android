@@ -1,25 +1,28 @@
-package com.corpex.practicafct;
+package com.corpex.practicafct.Activities;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-public class AcercaDeActivity extends AppCompatActivity {
+import com.corpex.practicafct.Fragments.PreferenciasFragment;
+import com.corpex.practicafct.R;
+
+public class PreferenciasActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_acerca_de);
+        setContentView(R.layout.activity_preferencias);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Acerca de");
+        toolbar.setTitle("Preferencias");
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setHomeButtonEnabled(true);
-            //getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-
+        // Se muestra el fragmento en la actividad.
+        getFragmentManager().beginTransaction().replace(R.id.flContenido, new PreferenciasFragment()).commit();
     }
 
     @Override

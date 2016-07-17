@@ -1,37 +1,28 @@
-package com.corpex.practicafct;
+package com.corpex.practicafct.Activities;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
 
-public class NuevaVisita extends AppCompatActivity {
+import com.corpex.practicafct.R;
+
+public class AcercaDeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nueva_visita);
+        setContentView(R.layout.activity_acerca_de);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Acerca de");
         setSupportActionBar(toolbar);
-
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setHomeButtonEnabled(true);
             //getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
         }
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-    }
 
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -52,6 +43,4 @@ public class NuevaVisita extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 }

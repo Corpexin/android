@@ -1,8 +1,10 @@
-package com.corpex.practicafct;
+package com.corpex.practicafct.Activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
@@ -11,9 +13,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.corpex.practicafct.Fragments.ProximasVisitasFragment;
+import com.corpex.practicafct.Fragments.Tab1Fragment;
+import com.corpex.practicafct.Fragments.Tab2Fragment;
+import com.corpex.practicafct.Fragments.nuevo_alumno;
+import com.corpex.practicafct.Fragments.tab_layout_fragment;
+import com.corpex.practicafct.R;
+
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, nuevo_alumno.OnFragmentInteractionListener, tab_layout_fragment.OnFragmentInteractionListener,Tab1Fragment.OnFragmentInteractionListener, Tab2Fragment.OnFragmentInteractionListener, ProximasVisitasFragment.OnFragmentInteractionListener {
     NavigationView navigationView;
     DrawerLayout drawer;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,22 +59,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.confirmar) {
-            return true;
-        }else if(id == android.R.id.home){
-            drawer.openDrawer(GravityCompat.START);
-        }
-
-        return super.onOptionsItemSelected(item);
+    public void abrirDrawer(){
+        drawer.openDrawer(GravityCompat.START);
     }
+
+
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.nuevo_alumno) {
-            frg = nuevo_alumno.newInstance("Nuevo Alumno");
+            frg = nuevo_alumno.newInstance();
             getSupportFragmentManager().beginTransaction().replace(R.id.content, frg, "Nuevo Alumno").commit();
         } else if (id == R.id.tutorias) {
             frg =  tab_layout_fragment.newInstance("Tutorias");
@@ -93,8 +94,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
-    }
 }

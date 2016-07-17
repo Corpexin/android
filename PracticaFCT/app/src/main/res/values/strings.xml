@@ -28,4 +28,5 @@
     <string name="horaI">Hora inicio:</string>
     <string name="HoraF">Hora fin:</string>
     <string name="resumen">Resumen:</string>
+    <string name="avatar_alumno">avatar</string>
 </resources>

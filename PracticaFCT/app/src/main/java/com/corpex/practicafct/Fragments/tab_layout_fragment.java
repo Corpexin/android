@@ -1,8 +1,8 @@
-package com.corpex.practicafct;
+package com.corpex.practicafct.Fragments;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.DrawableRes;
 import android.support.design.widget.FloatingActionButton;
@@ -11,11 +11,18 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.corpex.practicafct.Activities.NuevaVisita;
+import com.corpex.practicafct.Adapters.AlumnosAdapter;
+import com.corpex.practicafct.DataBase.DAO;
+import com.corpex.practicafct.POJO.Alumno;
+import com.corpex.practicafct.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +45,8 @@ public class tab_layout_fragment extends Fragment {
 
     private static final String ARG_TITULO = "titulo";
     private FloatingActionButton fabAccion;
+    private ArrayList<Alumno> mAlumnos;
+    private Alumno alumnoElegido;
 
     private String mTitulo;
 
@@ -112,13 +121,6 @@ public class tab_layout_fragment extends Fragment {
         return inflater.inflate(R.layout.fragment_tab_layout, container, false);
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -147,8 +149,6 @@ public class tab_layout_fragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
     }
 
 
@@ -160,14 +160,16 @@ public class tab_layout_fragment extends Fragment {
     private void configViewPager(View view) {
         final ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewpager);
         final ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager());
-        viewPagerAdapter.addFragment(Tab1Fragment.newInstance(),"Alumno", 0);
-        viewPagerAdapter.addFragment(Tab2Fragment.newInstance(),"Visitas",0);
+        mostrarDialog();
+        viewPagerAdapter.addFragment(Tab1Fragment.newInstance(), "Alumno", 0);
+        viewPagerAdapter.addFragment(Tab2Fragment.newInstance(), "Visitas", 0);
         viewPager.setAdapter(viewPagerAdapter);
         final TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tabs);
         // OJO se hace en post por bug en design support library 22.2.1
         tabLayout.post(new Runnable() {
             @Override
-            public void run() {tabLayout.setupWithViewPager(viewPager);
+            public void run() {
+                tabLayout.setupWithViewPager(viewPager);
             }
         });
         // Se añade un listener para poder mostrar / ocultar el FAB dependiendo
@@ -195,11 +197,34 @@ public class tab_layout_fragment extends Fragment {
         });
     }
 
+    private void mostrarDialog() {
+        AlertDialog.Builder b = new AlertDialog.Builder(this.getActivity());
+        b.setTitle("Alumnos");
+        b.setIcon(R.mipmap.icono);
+        // Se crea el array de datos.
+        mAlumnos = getDatos();
+        // Se crea y asigna el adaptador.
+        AlumnosAdapter adaptador = new AlumnosAdapter(this.getActivity(),getDatos());
+        b.setAdapter(adaptador, new DialogInterface.OnClickListener() {
+            // Cuando se hace click sobre un elemento de la lista.
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Se notifica el evento al listener pasándole el alumno pulsado.
+                onListItemClick(mAlumnos.get(which));
+            }
+        });
+        // Se retorna el diálogo.
+       b.create();
+        b.show();
+    }
 
+    private ArrayList<Alumno> getDatos() {
+        return (ArrayList<Alumno>) DAO.getInstance(getContext()).getAllAlumnos();
+    }
 
-
-
-
+    private void onListItemClick(Alumno alumno) {
+        alumnoElegido = alumno;
+    }
 
 
     // Adaptador para el ViewPager.
