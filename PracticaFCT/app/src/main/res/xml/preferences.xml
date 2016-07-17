@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory>
+        <CheckBoxPreference
+            android:key="prefEnviarMensaje"
+            android:title="Enviar mensaje"/>
+        <ListPreference
+            android:key="prefPInicial"
+            android:title="Pestaña inicial"
+            android:dialogTitle="Pestaña inicial"
+            android:entries="@array/tipo_conexion_entries"
+            android:entryValues="@array/tipo_conexion_values"
+            android:defaultValue="tab_layout_fragment" />
+
+        <ListPreference
+            android:key="prefOrdenV"
+            android:title="Orden visitas"
+            android:dialogTitle="Orden visitas"
+            android:entries="@array/orden_visitas_entries"
+            android:entryValues="@array/orden_visitas_values"
+            android:defaultValue="desc" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
